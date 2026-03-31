@@ -10,7 +10,7 @@ from cocotb.triggers import ClockCycles
 async def test_project(dut):
 	dut._log.info("Start")
 
-	clock = Clock(dut.clk, 10)
+	clock = Clock(dut.clk, 10, unit='ns')
 	cocotb.start_soon(clock.start())
 
 	# Reset
