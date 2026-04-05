@@ -18,7 +18,7 @@ module tt_um_example (
 	);
 
 	wire reset = !rst_n;
-
+/*
 	wire vsync0 = ui_in[0];
 	wire new_line = !ui_in[1];
 
@@ -32,9 +32,14 @@ module tt_um_example (
 	end
 
 	assign uo_out = vsync_reg;
+*/
+	reg [14:0] data;
+	always_ff @(posedge clk) begin
+		if (reset) data <= '0;
+		else if (uio_in[7]) data <= {uio_in[6:0], ui_in};
+	end
 
-	// All output pins must be assigned. If not used, assign to 0.
-	assign uio_out = 0;
+	assign {uio_out, uo_out} = data;
 	assign uio_oe  = 0;
 
 	// List all unused inputs to prevent warnings

@@ -32,6 +32,9 @@
   "CLOCK_PORT": "clk",
 
   "//": "Configuration docs: https://librelane.readthedocs.io/en/latest/reference/configuration.html",
+  "SYNTH_CLOCKGATE_MIN_WIDTH": 1,
+  "SYNTH_CLOCKGATE_POSEDGE_ICG": "sky130_fd_sc_hd__dlclkp/GATE/CLK/GCLK",
+
 
   "//": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
   "//": "!!! DO NOT CHANGE ANYTHING BELOW THIS POINT !!!",
